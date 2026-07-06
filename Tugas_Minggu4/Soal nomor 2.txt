@@ -1,0 +1,43 @@
+/** Nama : Muhammad Lutvi
+ *  Kelas : TK 1A
+ *  soalnomor2 susu
+ */
+ 
+import java.util.Scanner;
+
+public class TugasNomor2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Masukkan Merek (X/Y/Z): ");
+        String merk = input.next();
+        System.out.print("Masukkan Jumlah Beli: ");
+        int jml = input.nextInt();
+        
+        int harga = 0;
+        double diskon = 0;
+
+        // cara kerja diskon
+        if (merk.equalsIgnoreCase("X")) {
+            harga = 40000;
+            if (jml >= 3) diskon = 0.10 * (jml * harga);
+        } else if (merk.equalsIgnoreCase("Y")) {
+            harga = 50000;
+            if (jml > 3) diskon = 0.12 * (jml * harga);
+        } else if (merk.equalsIgnoreCase("Z")) {
+            harga = 60000;
+            if (jml >= 2) diskon = 0.15 * (jml - 1) * harga;
+        }
+
+        int sebelumdiskon = jml * harga;
+        int sesudahdiskon = sebelumdiskon - (int)diskon;
+
+        // Tampilan struk pembayaran
+        System.out.println("\n--- RINCIAN PEMBAYARAN ---");
+        System.out.println("Total Belanja : Rp " + sebelumdiskon);
+        System.out.println("Potongan Diskon: Rp " + (int)diskon);
+        System.out.println("Total Bayar   : Rp " + sesudahdiskon);
+        
+        input.close();
+    }
+}

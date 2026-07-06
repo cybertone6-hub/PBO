@@ -1,0 +1,39 @@
+** Nama : Muhammad Lutvi
+ *  Kelas : TK 1A
+ *  soalnomor3 kelipatan11
+ */
+import java.util.Scanner;
+
+public class TugasNomor3 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Batas Awal: ");
+        int awal = input.nextInt();
+        System.out.print("Batas Akhir: ");
+        int akhir = input.nextInt();
+        
+        int total = 0;
+        int jumlahdata = 0;
+
+        System.out.print("Deret: ");
+        for (int i = awal; i <= akhir; i++) {
+            if (i % 11 == 0 && i % 2 != 0) { // cek
+                System.out.print(i + " ");
+                total = total + i; 
+                jumlahdata++;
+            }
+        }
+
+        System.out.println("\nJumlah Total : " + total);
+        
+        if (jumlahdata > 0) {
+            double rata = (double) total / jumlahdata;
+            System.out.println("Rata-rata    : " + rata);
+        } else {
+            System.out.println("Tidak ada angka yang cocok.");
+        }
+        
+        input.close();
+    }
+}

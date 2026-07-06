@@ -1,0 +1,28 @@
+/** Nama : Muhammad Lutvi
+ *  Kelas : TK 1A
+ *  soalnomor5 QuestTwelveRealms
+ */
+ 
+import java.util.Scanner;
+
+public class QuestTwelveRealms {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("input Nomor Awal: ");
+        int awal = input.nextInt();
+        System.out.print("input Nomor Akhir: ");
+        int akhir = input.nextInt();
+        
+        System.out.print("Misi yang membuka portal: ");
+        
+        // Perulangan 
+        for (int i = awal; i <= akhir; i++) {
+            // Cek kelipatan 3 kelipatan 4
+            if (i % 3 == 0 && i % 4 == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        
+        input.close();
+    }

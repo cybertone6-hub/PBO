@@ -1,0 +1,21 @@
+/** Nama : Muhammad Lutvi
+ *  Kelas : TK 1A
+ *  soalnomor4 ganjilgenap
+ */
+import java.util.Scanner;
+
+public class Tugasnomor4 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        int angka = 1; // Dikasih 1 (ganjil) supaya loop jalan
+        
+        while (angka % 2 != 0) {
+            System.out.print("Masukkan bilangan genap: ");
+            angka = input.nextInt();
+        }
+
+        System.out.println("Hasil: " + (angka + 1));
+        input.close();
+    }
+}

@@ -1,0 +1,30 @@
+/** Nama : Muhammad Lutvi
+ *  Kelas : TK 1A
+ *  soalnomor1 Dina
+ */
+import java.util.Scanner;
+
+public class TugasNomor1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        int tohal = 50;
+        int hargaperhal = 15000;
+        
+        System.out.print("Masukkan jumlah halaman yang sudah diketik : ");
+        int x = input.nextInt();
+       
+        // Perhitungan pendapatan
+        int uangPasti = x * hargaperhal;
+        int sisahalaman = tohal - x;
+        int uangbelum = sisahalaman * hargaperhal;
+        
+        // hasil
+        System.out.println("Jumlah halaman selesai: " + x);
+        System.out.println("Uang yang sudah diterima: Rp " + uangPasti);
+        System.out.println("Halaman yang belum selesai : " + sisahalaman);
+        System.out.println("Uang sisa halaman: Rp " + uangbelum);
+        
+        input.close();
+    }
+}

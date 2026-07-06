@@ -1,0 +1,25 @@
+/** Nama : Muhammad Lutvi
+ *  Kelas : TK 1A
+ *  soalnomor6 dies natalis PNP
+ */
+import java.util.Scanner;
+
+public class SoalNomor6 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Masukkan umur PNP: ");
+        int umur = input.nextInt();
+        
+        // Cek  kelipatan 10 (Dekade)
+        if (umur % 10 == 0) {
+            int dekade = umur / 10;
+            System.out.println("Dekade PNP Ke = " + dekade);
+        } else {
+            // Jika bukan kelipatan 10 maka (Dies Natalis)
+            System.out.println("Dies Natalis PNP Ke = " + umur);
+        }
+        
+        input.close();
+    }
+}

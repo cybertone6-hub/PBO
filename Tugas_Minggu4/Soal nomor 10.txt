@@ -1,0 +1,54 @@
+/** Nama : Muhammad Lutvi
+ *  Kelas : TK 1A
+ *  soalnomor10 tiketwiolah
+ */
+ 
+import java.util.Scanner;
+
+public class TugasNomor10 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Tujuan (1:Jkt, 2:Ygy, 3:Sby): ");
+        int tujuan = input.nextInt();
+        System.out.print("Kelas (1:Eks, 2:Bis, 3:Eko): ");
+        int kelas = input.nextInt();
+        System.out.print("Banyak Tiket: ");
+        int jumlah = input.nextInt();
+
+        int harga = 0;
+        // Menentukan harga tiket awal
+        if (tujuan == 1) 
+        { // Jakarta
+            if (kelas == 1) harga = 70000;
+            else if (kelas == 2) harga = 40000;
+            else harga = 10000;
+        } else if (tujuan == 2) 
+        { // Yogya
+            if (kelas == 1) harga = 80000;
+            else if (kelas == 2) harga = 50000;
+            else harga = 20000;
+        } else if (tujuan == 3) 
+        { // Surabaya
+            if (kelas == 1) harga = 90000;
+            else if (kelas == 2) harga = 60000;
+            else harga = 30000;
+        }
+
+        int totalHarga = harga * jumlah;
+        double diskon = 0;
+
+        // Promo: Surabaya-Eksekutif (3-1) atau Yogya-Ekonomi (2-3)
+        if ((tujuan == 3 && kelas == 1 && jumlah >= 4) || (tujuan == 2 && kelas == 3 && jumlah >= 4)) {
+            diskon = 0.10 * totalHarga;
+        }
+
+        System.out.println("\n--- RINCIAN PEMBAYARAN ---");
+        System.out.println("Harga Tiket: Rp " + harga);
+        System.out.println("Total Harga: Rp " + totalHarga);
+        System.out.println("Diskon     : Rp " + (int)diskon);
+        System.out.println("Bayar      : Rp " + (totalHarga - (int)diskon));
+        
+        input.close();
+    }
+}
